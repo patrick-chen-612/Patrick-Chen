@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+.accordionone {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+                                
+        body {
+          font-family: 'Lato', sans-serif;
+        }
+        
+        .overlay {
+          height: 0%;
+          width: 100%;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: rgb(0,0,0);
+          background-color: rgba(0,0,0, 0.9);
+          overflow-y: hidden;
+          transition: 0.5s;
+        }
+        
+        .overlay-content {
+          position: relative;
+          top: 25%;
+          width: 100%;
+          text-align: center;
+          margin-top: 30px;
+        }
+        
+        .overlay a {
+          padding: 8px;
+          text-decoration: none;
+          font-size: 36px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .overlay a:hover, .overlay a:focus {
+          color: #f1f1f1;
+        }
+        
+        .overlay .closebtn {
+          position: absolute;
+          top: 20px;
+          right: 45px;
+          font-size: 60px;
+        }
+
+        
+        
+        @media screen and (max-height: 450px) {
+          .overlay {overflow-y: auto;}
+          .overlay a {font-size: 20px}
+          .overlay .closebtn {
+          font-size: 40px;
+          top: 15px;
+          right: 35px;
+          }
+        }
+        </style>
+        </head>
+<title>Patrick Chen</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="chen.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+</style>
+<body class="w3-black">
+
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+                <i class="fa fa-home w3-xxlarge"></i>My Name</a>
+            <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                <i class="fa fa-user w3-xxlarge"></i>Learning Experience</a>    
+            <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                 <i class="fa fa-eye w3-xxlarge"></i>Photos</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+                    <i class="fa fa-envelope w3-xxlarge"></i>Contact</a>
+        </div>
+      </div>
+
+      <!-- Navbar on small screens (Hidden on medium and large screens) -->
+        <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+      <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+      <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+      <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+      <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+    </div>
+        </div>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+      <script>
+      function openNav() {document.getElementById("myNav").style.height = "100%";}
+      function closeNav() {document.getElementById("myNav").style.height = "0%";}
+      </script>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Patrick Chen.</h1>
+    <p>Chung Yuan Christian University Department of Information Management.</p>
+    <img src="/img/S__130703374.jpg" alt="boy" class="w3-image" width="992" height="1108">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">My Name</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>
+        　　我出生在一個三代同堂的家庭，父親是國際貿易公司的老闆，母親是一位家庭教師，兩個弟弟目前就讀高中。遙記當我還小的時候，父親帶我去找他的朋友，
+        他的職業是程式設計師。他在我眼前輕敲鍵盤、飛快的撰寫程式，給當時的我留下了深刻的印象，覺得這份工作看起來好帥。這使我開始對電腦有著極大的興趣。
+        小學時，媽媽還帶著我們三兄弟，利用寒暑假去樂高機器人的營隊，從組裝到撰寫簡單的程式，讓手上本來只能用人工操作的玩具，加上一顆電腦主機，讓玩具能
+        透過指令而生動活潑起來，更加深我對電腦的喜愛，覺得非常神奇。在求學階段，讓我認識了一些關於資訊管理的課程，因本身的熱愛，使我不斷增進我自己的電
+        腦能力，由於父母親的工作、興趣及教育，使我擁有獨立邏輯思考、歸納整理及解決問題的能力，加上自己對電腦的喜愛，高中時開始學習計算機概論及文書處理，
+        直到現在我也還後悔自己選擇的這條路。以下是我具備的能力:
+
+    </p>
+    
+    <p class="w3-wide">JavaScript</p>
+    <div class="w3-white"><div class="w3-dark-grey" style="height:28px;width:75%">75%</div></div>
+
+    <p class="w3-wide">CSS</p>
+    <div class="w3-white"><div class="w3-dark-grey" style="height:28px;width:80%">80%</div></div>
+
+    <p class="w3-wide">HTML</p>
+    <div class="w3-white"><div class="w3-dark-grey" style="height:28px;width:90%">90%</div></div><br>  
+    
+    <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">7+</span><br>
+        Family
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">15+</span><br>
+        Projects 
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">120+</span><br>
+        Meeting
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">500+</span><br>
+        Volunteer
+      </div>
+    </div>
+    
+    <!-- Grid for pricing tables -->
+    <h3 class="w3-padding-16 w3-text-light-grey">My Learning Experience</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">關於我的學歷</li>
+          <button class="accordion">國小</button>
+          <div class="panel">
+            <p>永春國小</p>
+          </div>
+          
+          <button class="accordion">國中</button>
+          <div class="panel">
+            <p>明道國中</p>
+          </div>
+          
+          <button class="accordion">高中</button>
+          <div class="panel">
+            <p>明道高職 </p>
+          </div>
+
+          <button class="accordion">大學</button>
+          <div class="panel">
+            <p>中原大學 </p>
+          </div>
+          <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+            
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+              });
+            }
+            </script>
+          <li class="w3-padding-16">
+            <h2> Education</h2>
+            <span class="w3-opacity">學海無涯</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">學歷</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">關於我的經歷</li>
+          <button class="accordionone">社團</button>
+          <div class="panel">
+            <p>童軍社 </p>
+          </div>
+          <button class="accordionone">營隊</button>
+          <div class="panel">
+            <p>台中REVERY團隊</p>
+          </div>
+          <button class="accordionone">打工</button>
+          <div class="panel">
+            <p>數學家教 餐飲業</p>
+          </div>
+          <button class="accordionone">幹部</button>
+          <div class="panel">
+            <p>衛生股長 財務長 </p>
+          </div>
+
+          <script>
+            var acc = document.getElementsByClassName("accordionone");
+            var i;
+            
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+              });
+            }
+            </script>
+          <li class="w3-padding-16">
+            <h2>Experience</h2>
+            <span class="w3-opacity">見多識廣</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">經歷</button>
+          </li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+    
+    <!-- Testimonials -->
+    <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
+    <img src="/img/S__130703383.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">黑孩子咖啡.</span> 團隊財務長.</p>
+    <p>曾在中原大學企業概論課程擔任財務長一職.</p><br>
+    
+    <img src="/img/S__130703380.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">台中REVERY團隊 .</span> REVERY團隊股員.</p>
+    <p>下崙國小服務. 和興國小服務. </p>
+  <!-- End About Section -->
+  </div>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="/img/S__130703372.jpg" style="width:50%">
+        <img src="/img/S__130703374.jpg" style="width:50%">
+
+        <img src="/img/S__130703382.jpg" style="width:50%">
+
+      </div>
+
+      <div class="w3-half">
+        <img src="/img/S__130711557.jpg" style="width:50%">
+        <img src="/img/S__130703376.jpg" style="width:50%">
+       
+      </div>
+      </div>
+    <!-- End photo grid -->
+    </div>        
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> 台中市南屯區文心南五路一段231號  </p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: 0975027588      </p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: 61202patrick@gmail.com</p>
+    </div><br>
+    <p>Let's get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <a href="https://www.facebook.com/profile.php?id=100005755862085" target="blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/cc.pudding_1009/" target="blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <!-- 改成你的github --> <a href="" target="blank"style="float:right"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+
+    <p class="w3-medium">Powered by <a href="https://tzuying-wu.github.io/midterm/midterm/home.HTML" target="_blank" class="w3-hover-text-green">chen</a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
